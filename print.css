@@ -1,0 +1,52 @@
+@media print
+{
+  .bootDivs
+  {
+    display: none;
+  }
+  #page
+  {
+    display: none;
+  }
+  #p-sidenote
+  {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+  }
+  button
+  {
+    display: none;
+  }
+  textarea
+  {
+    border: 0px;
+  }
+}
+
+@media screen 
+
+{
+  .bootDivs
+  {
+    display: none;
+  }
+  #page
+  {
+    display: none;
+  }
+  #p-sidenote
+  {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+  }
+  button
+  {
+    display: none;
+  }
+  textarea
+  {
+    border: 0px;
+  }
+}

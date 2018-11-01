@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ManageBit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./import/bulma.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./import/fa.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="./print.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
+    <script src="./script/main.js"></script>
+    <script src="./script/manageSite.js"></script>
+    <script src="./script/manageSale.js"></script>
+    <script src="./script/siteExplorer.js"></script>
+    <script src="./script/search.js"></script>
+    <script src="./script/kManager.js"></script>
+</head>
+
+<body id="toTheTop">
+
+    <div class="bootDivs" id="loadingDataDiv">
+        <img src="./import/spin.png" class="fa fa-spin" width="100px" height="100px" alt="Loading...">
+        <h1 class="font-size-3">Syncing Data...</h1>
+    </div>
+    <!-- Pass Protection -->
+    <div class="bootDivs" id="passDiv">
+        <div id="passImg">
+        <img src="./import/archive.png" width="200px" height="200px">
+        <p>ManageBit v1.4.3 <br> AN AROXBIT PRODUCT</p>
+        </div>
+        <input type="password" class="input is-info" id="pass-input" placeholder="Password">
+        <button class="button is-primary" id="pass-btn">Login</button>
+    </div>
+  
+    <div class="columns" id="page">
+
+        <!-- Side Menu -->
+        <div class="column is-one-quarter" id="menu">
+            <img src="./import/archive.png" width="64px" height="64px">
+            <h1 id="header">ManageBit<br>v1.4</h1>
+            <a data-div-id="dashboard-div" class="button is-medium menu-btn" id="dashboard-menu-btn">Dashboard</a> <br>
+            <a data-div-id="create-sale-div" class="button is-medium menu-btn" id="create-sale-menu-btn">Create Sale</a> <br>
+            <a data-div-id="create-site-div" class="button is-medium menu-btn" id="create-site-menu-btn">Create Site</a> <br>
+            <a data-div-id="khasra-div" class="button is-medium menu-btn" id="khasra-menu-btn">Khasra Data</a> <br>
+            <a data-div-id="search-data-div" class="button is-medium menu-btn" id="search-data-menu-btn">Search Data</a> <br>
+            <a data-div-id="about-managebit-div" class="button is-medium menu-btn" id="about-managebit-menu-btn"> ManageBit</a> <br>
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="column" id="content">
+
+            <!-- Dashboard Container -->
+            <div class="pad" id="dashboard-div">
+                <!-- Site Explorer -->
+                <div class="" id="site-explorer-hider">
+                    <div class="columns is-multiline .is-centered has-text-centered is-paddingless margin-1" id="site-explorer-div" style="margin-left: 9.5%;">
+                        <a class='hideit past box column margin-2 is-5'>
+                            <p class='has-text-primary is-size-3'>Jupiters Farm</p>
+                            <p>Total Blocks: 4</p>
+                            <p>Total Plots: 40</p>
+                            <p>Available Plots: 38</p>
+                        </a>
+                        <p>No Site Data Found! Create New Site.</p>
+                    </div>
+                </div>
+
+                <!-- Block Explorer -->
+                <div class="hideit" id="block-explorer">
+                    <!-- Site Updater + Avail Plots -->
+                    <section class="columns box is-paddingless">
+                        <!-- Site Updater -->
+                        <div class="column padding-1 scrollable-1">
+
+                            <div class="field">
+                                <label class="label">Site Name</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="site-name-input-update" type="text" placeholder="Name of the site.">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Seller Name</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="seller-name-input-update" type="text" placeholder="Name of the gram.">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Village Name</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="vil-name-input-update" type="text" placeholder="Name of the village.">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Total Land Area</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="total-area-input-update" type="text" placeholder="Total land area of the site. (Example: 3000 Hectares),">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Usable Land Area</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="usable-area-input-update" type="text" placeholder="Land area which can be sold, exempting land to be used for roads, etc.">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Landuse Status</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="landuse-input-update" type="text" placeholder="Land was used for (Example: Farming).">
+                                </div>
+                            </div>
+
+
+                            <div class="field">
+                                <label class="label">Registry Detail</label>
+                                <div class="control">
+                                    <textarea class="textarea is-primary" id="site-registry-input-update" type="text" placeholder="Registry details, such as khasra number, etc."></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Payment Detail</label>
+                                <div class="control">
+                                    <textarea class="textarea is-primary" id="site-payment-input-update" type="text" placeholder="Payment details, such as total cost, payment made, etc."></textarea>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 40px;">
+                                <button class="button is-primary" id="update-site-btn">Update Site</button>
+                                <button class="button is-info" id="reset-site-btn" style="margin-left: 10px;">Reset Site</button>
+                                <button class="button is-danger" id="delete-site-btn" style="margin-left: 10px;">Delete Site</button>
+                            </div>
+
+                            <!-- yo -->
+                            <div id="plot-data-div" style="height: 400px;overflow-y: auto;overflow-x: hidden;border: black 1px solid;padding: 10px;margin-top: 30px;">
+                                <label class="label">Blocks/Sectors and Plots</label>
+                                
+                                <div class='field'>
+                                    <div class='control columns'>
+                                        <div class='column is-narrow'>
+                                            <p class='bd-index' ></p>
+                                        </div>
+                                        <div class='column'>
+                                            <input class='bd-a' type='number' placeholder='A|1'>
+                                        </div>
+                                        <div class='column'>
+                                            <input class='bd-b' type='number' placeholder='B|2'>
+                                        </div>
+                                        <div class='column'>
+                                            <input class='bd-c' type='number' placeholder='C|3'>
+                                        </div>
+                                        <div class='column'>
+                                            <input class='bd-d' type='number' placeholder='D|4'>
+                                        </div>
+                                        <div class='column'>
+                                            <input class='bd-e' type='number' placeholder='E|5'>
+                                        </div>
+                                        <div class='column'>
+                                            <input class='bd-f' type='number' placeholder='F|6'>
+                                        </div>
+                                        <div class='column'>
+                                            <input class='bd-g' type='number' placeholder='G|7'>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                 
+                            </div>
+
+                            <button id="plot-data-btn" class="button is-primary" style="margin-top:15px;">Update Plot Data</button>
+                        </div>
+                        <!-- Avail Plots -->
+                        <div class="column is-narrow font-size-1 has-text-centered border-left-1 padding-1">
+                            <ul class="scrollable-1" id="block-explorer-avail-plots">
+                            <li><a>A1</a></li>
+                            <li><a>A2</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- Block List -->
+                    <section class="is-paddingless margin-1">
+                        <div class="columns is-multiline .is-centered has-text-centered" style="margin-left: 9.5%;">
+                            <a class="past box column margin-2 is-one-quarter block-explorer-btn hideit">
+                                <p class="title is-marginless font-size-2">A</p>
+                                <p>36 | 70</p>
+                            </a>
+                            <a class="past box column margin-2 is-one-quarter block-explorer-btn hideit">
+                                <p class="title font-size-2 is-marginless">B</p>
+                                <p>36 | 70</p>
+                            </a>
+                            <a class="past box column margin-2 is-one-quarter block-explorer-btn hideit">
+                                <p class="title font-size-2 is-marginless">C</p>
+                                <p>36 | 70</p>
+                            </a>
+                            <a class="past box column margin-2 is-one-quarter block-explorer-btn hideit">
+                                <p class="title font-size-2 is-marginless">D</p>
+                                <p>36 | 70</p>
+                            </a>
+                            <a class="past box column margin-2 is-one-quarter block-explorer-btn hideit">
+                                <p class="title font-size-2 is-marginless">E</p>
+                                <p>36 | 70</p>
+                            </a>
+                            <a class="past box column margin-2 is-one-quarter block-explorer-btn hideit">
+                                <p class="title font-size-2 is-marginless">F</p>
+                                <p>36 | 70</p>
+                            </a>
+                            <a class="past box column margin-2 is-one-quarter block-explorer-btn hideit">
+                                <p class="title font-size-2 is-marginless">G</p>
+                                <p>36 | 70</p>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Plot Explorer -->
+                <div class="hideit" id="plot-explorer">
+                    <!-- Plot Updater + Selled Plots + Avail Plots -->
+                    <section class="columns box is-paddingless">
+                        <!-- Plot Updater -->
+                        <div class="column padding-1 scrollable-1">
+                            <div class="field">
+                                <label class="label">Customer Name</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="sale-name-input-update" type="text" placeholder="Name of the customer." style="width: 300px">
+                                    <button class="button is-info" id="transfer-name-btn">Tranfer Name</button>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Transfer plot to another site or block.</label>
+                                <div class="select">
+                                    <select id="sale-site-select-transfer">
+                                        <option>Select Site</option>
+                                    </select>
+                                </div>
+                                <div class="select">
+                                    <select id="sale-block-select-transfer">
+                                        <option>Blocks or Sectors</option>
+                                    </select>
+                                </div>
+                                <div class="select">
+                                    <select id="sale-plot-select-transfer">
+                                        <option>Plot</option>
+                                    </select>
+                                </div>
+                                <button class="button is-info" id="transfer-plot-btn">Transfer Plot</button>
+                            </div>
+                            <div class="field">
+                                <label class="label">Mobile Number</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="sale-mobile-input-update" type="text" placeholder="Mobile number of the customer.">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Address</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="sale-address-input-update" type="text" placeholder="Address of the customer.">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Site Name, Block and Plot No.</label>
+                                <div class="select">
+                                    <select  disabled>
+                                        <option id="sale-site-select-update">Select Site</option>
+                                    </select>
+                                </div>
+                                <div class="select">
+                                    <select disabled>
+                                        <option id="sale-block-select-update">Blocks or Sectors</option>
+                                    </select>
+                                </div>
+                                <div class="select">
+                                    <select disabled>
+                                        <option id="sale-plot-select-update">Plot</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Plot Size</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="sale-plot-size-input-update" type="text" placeholder="Size of the plot.">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Payment Detail</label>
+                                <div class="control">
+                                    <textarea class="textarea is-primary" id="sale-payment-input-update" type="text" placeholder="Payment details, such as total cost, payment made, etc."></textarea>
+                                </div>
+                            </div>
+            
+                            <label class="containerz">Development Charges Paid
+                                <input type="checkbox" id="plot-dakhilkari-input-update">
+                                <span class="checkmark"></span>
+                            </label>    
+                            <label class='containerz'>Land Registry
+                                <input type='checkbox' id='plot-registry-input-update'>
+                                <span class='checkmark'></span>
+                            </label>
+                            <label class="containerz">Land Kabza
+                                <input type="checkbox" id="plot-kabza-input-update">
+                                <span class="checkmark"></span>
+                            </label>
+            
+                            <div style="margin-top: 40px;">
+                                <button class="button is-primary" id="update-sale-btn">Update</button>
+                                <button class="button is-info" id="reset-sale-btn" style="margin-left: 10px;">Reset</button>
+                                <button class="button is-danger" id="delete-sale-btn" style="margin-left: 10px;">Delete</button>
+                                <button class="button is-danger" id="refund-sale-btn" style="margin-left: 10px;">Refund</button>
+                                <button class="button is-light" id="print-sale-btn" style="margin-left: 10px;">Print</button>
+                            </div>
+                        </div>
+                        <!-- Selled Plots -->
+                        <div class="column is-narrow font-size-1 has-text-centered border-left-1 padding-1">
+                            <ul class="scrollable-1" id="plot-explorer-selled-plots">
+                            <li><a>A1</a></li>
+                            <li><a>A2</a></li>
+                            </ul>
+                        </div>
+                        <!-- Avail Plots -->
+                        <div class="column is-narrow font-size-1 has-text-centered border-left-1 padding-1">
+                            <ul class="scrollable-1" id="plot-explorer-avail-plots">
+                            <li><a>A1</a></li>
+                            <li><a>A2</a></li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- All the Plots -->
+                    <section class="is-paddingless margin-1">
+                        <div class="columns is-multiline has-text-centered" id="sale-list-div">
+                            <a class='box column margin-2 is-narrow' href='#plot-explorer'>
+                                <p class='font-size-3'>A1</p>
+                                <p>Name: Parth Sarthee</p>
+                                <p>Phone: 8687452468</p>
+                            </a>
+                        </div>
+                    </section>
+                    <hr style="background-color:black">
+
+                    <!-- Refunds -->
+                    <section class="is-paddingless margin-1">
+                        <div class="columns is-multiline has-text-centered" id="refund-list-div">
+                            <a class='box column margin-2 is-narrow' href='#plot-explorer'>
+                                <p class='font-size-3'>A1</p>
+                                <p>Name: Parth Sarthee</p>
+                                <p>Phone: 8687452468</p>
+                            </a>
+                        </div>
+                    </section>
+                    <hr style="background-color:black">
+
+                    <!-- Transfer -->
+                    <section class="is-paddingless margin-1">
+                        <div class="columns is-multiline has-text-centered" id="transfer-list-div">
+                            <a class='box column margin-2 is-narrow' href='#plot-explorer'>
+                                <p class='font-size-3'>A1</p>
+                                <p>Name: Parth Sarthee</p>
+                                <p>Phone: 8687452468</p>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+
+            <!-- New Sale Container -->
+            <div class="pad hideit" id="create-sale-div">                
+                <div class="field">
+                    <label class="label">Customer Name</label>
+                    <div class="control">
+                        <input class="input is-primary" id="sale-name-input" type="text" placeholder="Name of the customer.">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Mobile Number</label>
+                    <div class="control">
+                        <input class="input is-primary" id="sale-mobile-input" type="text" placeholder="Mobile number of the customer.">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Address</label>
+                    <div class="control">
+                        <input class="input is-primary" id="sale-address-input" type="text" placeholder="Address of the customer.">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Site Name, Block and Plot No.</label>
+                    <div class="select">
+                        <select id="sale-site-select">
+                          <option>Select Site</option>
+                        </select>
+                    </div>
+                    <div class="select">
+                        <select id="sale-block-select">
+                          <option>Blocks or Sectors</option>
+                        </select>
+                    </div>
+                    <div class="select">
+                        <select id="sale-plot-select">
+                          <option>Plot</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Plot Size</label>
+                    <div class="control">
+                        <input class="input is-primary" id="sale-plot-size-input" type="text" placeholder="Size of the plot.">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Payment Detail</label>
+                    <div class="control">
+                        <textarea class="textarea is-primary" id="sale-payment-input" type="text" placeholder="Payment details, such as total cost, payment made, etc."></textarea>
+                    </div>
+                </div>
+
+                <label class="containerz">Development Charges Paid
+                    <input type="checkbox" id="plot-dakhilkari-input">
+                    <span class="checkmark"></span>
+                </label>    
+                <label class='containerz'>Plot Registry
+                    <input type='checkbox' id='plot-registry-input'>
+                    <span class='checkmark'></span>
+                </label>
+                <label class="containerz">Plot Kabza
+                    <input type="checkbox" id="plot-kabza-input">
+                    <span class="checkmark"></span>
+                </label>
+
+                <div class="control" id="sale-control-one" style="margin-top: 40px;">
+                    <button class="button is-primary" id="save-sale-btn">Save The Purchase Data</button>
+                    <button class="button is-danger" id="clear-sale-btn" style="margin-left: 10px;">Clear The Fields</button>
+                </div>
+            </div>
+
+            <!-- New Site Container -->
+            <div class="pad hideit" id="create-site-div">
+                <div class="field">
+                    <label class="label">Site Name</label>
+                    <div class="control">
+                        <input class="input is-primary" id="site-name-input" type="text" placeholder="Name of the site.">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Seller Name</label>
+                    <div class="control">
+                        <input class="input is-primary" id="seller-name-input" type="text" placeholder="Name of the gram.">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Village Name</label>
+                    <div class="control">
+                        <input class="input is-primary" id="vil-name-input" type="text" placeholder="Name of the village.">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Total Land Area</label>
+                    <div class="control">
+                        <input class="input is-primary" id="total-area-input" type="text" placeholder="Total land area of the site. (Example: 3000 Hectares),">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Usable Land Area</label>
+                    <div class="control">
+                        <input class="input is-primary" id="usable-area-input" type="text" placeholder="Land area which can be sold, exempting land to be used for roads, etc.">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Type of Land Division</label>
+                    <div class="select">
+                        <select id="division-type-select-0">
+                          <option value="A">Block A</option>
+                          <option value="B">Block B</option>
+                          <option value="C">Block C</option>
+                          <option value="D">Block D</option>
+                          <option value="E">Block E</option>
+                          <option value="F">Block F</option>
+                          <option value="G">Block G</option>
+                          <option value="1S ">Sector 1</option>
+                          <option value="2S ">Sector 2</option>
+                          <option value="3S ">Sector 3</option>
+                          <option value="4S ">Sector 4</option>
+                          <option value="5S ">Sector 5</option>
+                          <option value="6S ">Sector 6</option>
+                          <option value="7S ">Sector 7</option>
+                        </select>
+                    </div>
+                    <div class="select">
+                        <select id="division-type-select-1">
+                          <option value="B">Block B</option>
+                          <option value="A">Block A</option>
+                          <option value="C">Block C</option>
+                          <option value="D">Block D</option>
+                          <option value="E">Block E</option>
+                          <option value="F">Block F</option>
+                          <option value="G">Block G</option>
+                          <option value="1S ">Sector 1</option>
+                          <option value="2S ">Sector 2</option>
+                          <option value="3S ">Sector 3</option>
+                          <option value="4S ">Sector 4</option>
+                          <option value="5S ">Sector 5</option>
+                          <option value="6S ">Sector 6</option>
+                          <option value="7S ">Sector 7</option>
+                        </select>
+                    </div>
+                    <div class="select">
+                        <select id="division-type-select-2">
+                          <option value="C">Block C</option>
+                          <option value="B">Block B</option>
+                          <option value="A">Block A</option>
+                          <option value="D">Block D</option>
+                          <option value="E">Block E</option>
+                          <option value="F">Block F</option>
+                          <option value="G">Block G</option>
+                          <option value="1S ">Sector 1</option>
+                          <option value="2S ">Sector 2</option>
+                          <option value="3S ">Sector 3</option>
+                          <option value="4S ">Sector 4</option>
+                          <option value="5S ">Sector 5</option>
+                          <option value="6S ">Sector 6</option>
+                          <option value="7S ">Sector 7</option>
+                        </select>
+                    </div>
+                    <div class="select">
+                        <select id="division-type-select-3">
+                          <option value="D">Block D</option>
+                          <option value="B">Block B</option>
+                          <option value="C">Block C</option>
+                          <option value="A">Block A</option>
+                          <option value="E">Block E</option>
+                          <option value="F">Block F</option>
+                          <option value="G">Block G</option>
+                          <option value="1S ">Sector 1</option>
+                          <option value="2S ">Sector 2</option>
+                          <option value="3S ">Sector 3</option>
+                          <option value="4S ">Sector 4</option>
+                          <option value="5S ">Sector 5</option>
+                          <option value="6S ">Sector 6</option>
+                          <option value="7S ">Sector 7</option>
+                        </select>
+                    </div>
+                    <div class="select">
+                        <select id="division-type-select-4">
+                          <option value="E">Block E</option>
+                          <option value="B">Block B</option>
+                          <option value="C">Block C</option>
+                          <option value="D">Block D</option>
+                          <option value="A">Block A</option>
+                          <option value="F">Block F</option>
+                          <option value="G">Block G</option>
+                          <option value="1S ">Sector 1</option>
+                          <option value="2S ">Sector 2</option>
+                          <option value="3S ">Sector 3</option>
+                          <option value="4S ">Sector 4</option>
+                          <option value="5S ">Sector 5</option>
+                          <option value="6S ">Sector 6</option>
+                          <option value="7S ">Sector 7</option>
+                        </select>
+                    </div>
+                    <div class="select">
+                        <select id="division-type-select-5">
+                          <option value="F">Block F</option>
+                          <option value="B">Block B</option>
+                          <option value="C">Block C</option>
+                          <option value="D">Block D</option>
+                          <option value="E">Block E</option>
+                          <option value="A">Block A</option>
+                          <option value="G">Block G</option>
+                          <option value="1S ">Sector 1</option>
+                          <option value="2S ">Sector 2</option>
+                          <option value="3S ">Sector 3</option>
+                          <option value="4S ">Sector 4</option>
+                          <option value="5S ">Sector 5</option>
+                          <option value="6S ">Sector 6</option>
+                          <option value="7S ">Sector 7</option>
+                        </select>
+                    </div>
+                    <div class="select">
+                        <select id="division-type-select-6">
+                          <option value="G">Block G</option>
+                          <option value="B">Block B</option>
+                          <option value="C">Block C</option>
+                          <option value="D">Block D</option>
+                          <option value="E">Block E</option>
+                          <option value="F">Block F</option>
+                          <option value="A">Block A</option>
+                          <option value="1S ">Sector 1</option>
+                          <option value="2S ">Sector 2</option>
+                          <option value="3S ">Sector 3</option>
+                          <option value="4S ">Sector 4</option>
+                          <option value="5S ">Sector 5</option>
+                          <option value="6S ">Sector 6</option>
+                          <option value="7S ">Sector 7</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Blocks/Sectors and Plots</label>
+                    <div class="control columns">
+                        <!-- <div class="select is-primary column">
+                            <select>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                            </select>
+                        </div> -->
+                        <div class="column">
+                            <input id="site-block-a-input" class="input is-primary" type="number" placeholder="Tot. Plots">
+                        </div>
+                        <div class="column">
+                            <input id="site-block-b-input" class="input is-primary" type="number" placeholder="Tot. Plots">
+                        </div>
+                        <div class="column">
+                            <input id="site-block-c-input" class="input is-primary" type="number" placeholder="Tot. Plots">
+                        </div>
+                        <div class="column">
+                            <input id="site-block-d-input" class="input is-primary" type="number" placeholder="Tot. Plots">
+                        </div>
+                        <div class="column">
+                            <input id="site-block-e-input" class="input is-primary" type="number" placeholder="Tot. Plots">
+                        </div>
+                        <div class="column">
+                            <input id="site-block-f-input" class="input is-primary" type="number" placeholder="Tot. Plots">
+                        </div>
+                        <div class="column">
+                            <input id="site-block-g-input" class="input is-primary" type="number" placeholder="Tot. Plots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Landuse Status</label>
+                    <div class="control">
+                        <input class="input is-primary" id="landuse-input" type="text" placeholder="Land was used for (Example: Farming).">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Registry Detail</label>
+                    <div class="control">
+                        <textarea class="textarea is-primary" id="site-registry-input" type="text" placeholder="Registry details, such as khasra number, etc."></textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Payment Detail</label>
+                    <div class="control">
+                        <textarea class="textarea is-primary" id="site-payment-input" type="text" placeholder="Payment details, such as total cost, payment made, etc."></textarea>
+                    </div>
+                </div>
+                
+
+                <div class="control" id="site-div-control" style="margin-top: 40px;">
+                    <button class="button is-primary" id="create-site-btn">Create New Site</button>
+                    <button class="button is-danger" id="clear-site-btn" style="margin-left: 10px;">Clear The Fields</button>
+                </div>
+                                    
+            </div >
+
+            <!-- Search Data Container -->
+            <div class="pad hideit" id="search-data-div">
+                <input id="search-input" type="text" class="input" placeholder="Search By Phone Number | Name" style="width: 300px"> <button id="search-btn" class="button is-info">Search</button>
+                <section class="is-paddingless margin-1">
+                    <div class="columns is-multiline has-text-centered" id="search-list-div">
+                        <a class='box column margin-2 is-narrow search-boxes'>
+                            <p class='font-size-3'>A1</p>
+                            <p class="super-p">Example One</p>
+                            <p>Name: Parth Sarthee</p>
+                            <p>Phone: 8687452468</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- About Container -->
+            <div class="pad hideit" id="about-managebit-div">
+                Software Name: ManageBit <br>
+                Version: v1.4|Realstate Edition <br>
+                Created and Programmed By Parth Sarthee. <br>
+                All Rights Are Reserved By Jupiters Group. <br>
+                Powered By ARCs | An Aroxbit Company | 2018
+            </div>
+
+            <!-- Khasra popup -->
+            <div class='pad hideit' id="khasra-div">
+                <div id="k-site-explorer-hider">
+                    <div class="columns is-multiline .is-centered has-text-centered is-paddingless margin-1" style="margin-left: 7%;" id="k-site-explorer-div">
+                        <a class='past box column margin-2 is-5'>
+                            <p class='has-text-primary is-size-3'>Jupiters Farm</p>
+                            <p>Total Blocks: 4</p>
+                            <p>Total Plots: 40</p>
+                            <p>Total Khasra: 38</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hideit" id="k-explorer">
+                    <div id="k-updater">
+                        <div class="box scrollable-1">
+
+                            <div class="field">
+                                <label class="label">Khasra Numer</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="k-number-input" type="text" placeholder="Unique khasra number of land">
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <label class="label">Farmer's Names</label>
+                                <div class="control">
+                                    <textarea class="textarea is-primary" id="k-name-input" type="text" placeholder="Names of the farmers."></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Payment Details</label>
+                                <div class="control">
+                                    <textarea class="textarea is-primary" id="k-payment-input" type="text" placeholder="Advance Cheque | All Payment Details."></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Land Area Details</label>
+                                <div class="control">
+                                    <textarea class="textarea is-primary" id="k-area-input" type="text" placeholder="Total Land Area | Usable Land Area."></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Land used in Block & Plots</label>
+                                <div class="control">
+                                    <input class="width-idek input is-primary" id="k-block-input" type="text" placeholder="Block or Sector" style="margin-right: 10px;">
+
+                                    <input class="width-idek input is-primary" id="k-from-plot-input" type="text" placeholder="From Plot">
+                                    -
+                                    <input class="width-idek input is-primary" id="k-to-plot-input" type="text" placeholder="To Plot">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Purchaser Name</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="k-purchaser-input" type="text" placeholder="Name of the purchaser.">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Stamp & Legal Fee</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="k-stamp-input" type="text" placeholder="Stamp and legal fee.">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Registry Date</label>
+                                <div class="control">
+                                    <input class="input is-primary" id="k-registry-date-input" type="text" placeholder="Date of the registry of the land.">
+                                </div>
+                            </div>
+                            <label class="containerz">Dakhilkharij
+                                <input type="checkbox" id="k-dakhil-input">
+                                <span class="checkmark"></span>
+                            </label>    
+                            <label class='containerz'>Map Approval
+                                <input type='checkbox' id='k-map-input'>
+                                <span class='checkmark'></span>
+                            </label>
+                            <label class="containerz">Landuse Changed as Housing
+                                <input type="checkbox" id="k-housing-input">
+                                <span class="checkmark"></span>
+                            </label>
+                            
+                            <div style="margin-top: 40px;">
+                                    <button class="button is-primary" id="k-create-btn">Create Khasra</button>
+                                <button class="button is-info" id="k-update-btn" style="margin-left: 10px;">Update Khasra</button>
+                                <button class="button is-danger" id="k-delete-btn" style="margin-left: 10px;">Delete Khasra</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <input id="k-search-input" type="text" class="input" placeholder="Search By Name | Khasra No." style="width: 300px"> <button id="k-search-btn" class="button is-info">Search</button>
+                    </div>
+                    <div id="k-result" style="margin-top: 30px;">
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="hideit box" id="print-div" style="overflow:scroll; height:100vh">
+        <p id="p-sidenote">
+            Reciept Number: 123456 <br>
+            Date: 15th July, 2018
+        </p>
+        <p id="p-name">Name: </p>
+        <p id="p-site">Site Name: </p>
+        <p id="p-block-plot">Block and Plot: </p>
+        <p id="p-plot-size">Plot Size: </p>
+        <p id="p-address">Address: </p> 
+        <textarea class="input is-primary" id="p-other" style="width:100%; font-size:16px; resize:none" placeholder="Add extra data here. (If any)"></textarea>
+        <br> <hr>
+        <p style="text-align:center">Payment Details</p>
+        <textarea class="input is-primary" id="p-payment" style="width:100%; font-size:16px; resize:none">No data found!</textarea>
+        <hr>
+        <p style="text-align:center">Terms and Conditions</p>
+        <textarea class="input is-primary" id="p-terms" style="width:100%; font-size:16px; resize: none;">Enter Terms & Conditions.</textarea>
+
+        <div style="text-align:center; margin-top: 30px;">
+            <button class="button is-primary" id="p-print-btn">Print</button>
+            <button class="button is-danger" id="p-back-btn">Back</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    document.getElementById('dashboard-menu-btn').style.backgroundColor = "whitesmoke";
+    document.getElementById('dashboard-menu-btn').style.color = "#3d3d3d";
+    document.getElementById('dashboard-menu-btn').addEventListener('click', function()
+    {
+        rawData.hide = true;
+        saveData(true);
+    });
+
+
+    // Print
+    document.getElementById('print-sale-btn').addEventListener('click', function()
+    {
+        document.getElementById('page').style.display = 'none';
+        document.getElementById('print-div').classList.remove('hideit');
+
+        document.getElementById('p-payment').style.height = '100px';
+        document.getElementById('p-other').style.height = '50px';
+        document.getElementById('p-terms').style.height = '100px';
+        
+        // Loading the data into print div
+        document.getElementById('p-sidenote').innerHTML = "Reciept No: " + Date.now().toString() + " <br> Date: " + (new Date).toDateString();
+
+        document.getElementById('p-name').innerText = "Name: "+ siteData[sd1].block[sd2].sale[sd3].cusName;
+
+        document.getElementById('p-site').innerText = "Site: "+ siteData[sd1].siteName;
+
+        document.getElementById('p-block-plot').innerText = "Block or Sector & Plot: "+ siteData[sd1].block[sd2].id +" "+ siteData[sd1].block[sd2].plotid[siteData[sd1].block[sd2].sale[sd3].plot];
+        
+        document.getElementById('p-plot-size').innerText = "Plot Size: "+ siteData[sd1].block[sd2].sale[sd3].plotSize;
+        
+        document.getElementById('p-address').innerText = "Address: "+ siteData[sd1].block[sd2].sale[sd3].cusAddress;
+        
+        document.getElementById('p-payment').value = siteData[sd1].block[sd2].sale[sd3].salePayment;
+
+        if(rawData.terms) document.getElementById('p-terms').value = rawData.terms;
+        else rawData.terms = "Enter Terms & Conditions.";
+        
+
+    });
+
+    document.getElementById('p-print-btn').addEventListener('click', function()
+    {
+        document.getElementById('p-payment').style.height = (document.getElementById('p-payment').scrollHeight + 50) + 'px';
+        document.getElementById('p-other').style.height = (document.getElementById('p-other').scrollHeight + 10) + 'px';
+        document.getElementById('p-terms').style.height = (document.getElementById('p-terms').scrollHeight + 50) + 'px';
+
+        if(!document.getElementById('p-other').value) document.getElementById('p-other').style.display = 'none';
+
+        window.print();
+        
+        if(rawData.terms != document.getElementById('p-terms').value)
+        {
+            rawData.terms = document.getElementById('p-terms').value;
+            saveData();
+        }
+        document.getElementById('p-other').style.display = '';
+        document.getElementById('p-payment').style.height = '100px';
+        document.getElementById('p-other').style.height = '50px';
+        document.getElementById('p-terms').style.height = '100px';
+
+    });
+
+    document.getElementById('p-back-btn').addEventListener('click', function()
+    {
+        document.getElementById('p-other').value = "";
+        document.getElementById('print-div').classList.add('hideit');
+        document.getElementById('page').style.display = '';
+
+    });
+
+    
+</script>
+
