@@ -1,69 +1,108 @@
-html
-{
+html {
     overflow-y: hidden;
 }
-#page
-{
+
+
+#page {
     height: calc(100vh + 12px);
-    /* overflow-x:hidden; */
 }
-#menu
-{
-    /* background-color: #fafafa; */
-    background-color: #3d3d3d;
-    /* border-right: 1px solid lightgrey; */
-    text-align: center;
-    padding: 0px;
-    padding-top: 50px;
-    /* overflow-x:hidden; */
-}
-#content
-{
+
+
+#content {
     background-color: whitesmoke;
     overflow: scroll;
     margin-right: 12px;
-    /* overflow-x:hidden; */
 }
-#header
-{
+
+
+
+/* Menu */
+#menu {
+    width: 200px;
+    background-color: #3d3d3d;
+    text-align: center;
+    padding: 0px;
+    padding-top: 50px;
+}
+#menu-header {
     color: whitesmoke;
     margin-bottom: 20px;
 }
-.menu-btn
-{
+.menu-btn {
     width: 100%;
     border-radius: 0px;
     border: 0px;
+    border-top: 1px turquoise solid;
     background-color: #3d3d3d;
     color: white;
 }
-.menu-btn:hover
-{
+.menu-btn:hover {
     background-color: white;
 }
-
-.hideit
-{
-    display: none;
+.menu-active{
+    background-color: whitesmoke;
+    color: #3d3d3d;
 }
 
 
-.pad
-{
-    padding: 30px;
+/* Status Bar */
+#_status{
+    position: absolute;
+    bottom: -56px;
+    width: 100%;
+    text-align: center;
+    background-color: #23D160;
+    padding: 10px;
+    font-size: 23px;
+    color: white;
+}
+#_status button{
+    background-color: #23D160;
+    border: none;
 }
 
 
 
 
+.hideit {
+    display: none !important;
+}
+
+.pad {
+    padding-left: 30px;
+    padding-top: 50px;
+}
+
+.font-size-1 {
+    font-size: 18px;
+}
+
+.font-size-2 {
+    font-size: 100px;
+}
+
+.font-size-3 {
+    font-size: 70px;
+}
+
+.font-size-4 {
+    font-size: 70px;
+}
+
+.border-left-1 {
+    border-left: 1px solid lightgrey;
+}
+
+li {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
 
 
 
 
-
-
-
-/* Customize the label (the containerz) */
+/* Checkboxes */
 .containerz {
     display: block;
     position: relative;
@@ -75,50 +114,37 @@ html
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .containerz input {
+}
+.containerz input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
+}
+.checkmark {
     position: absolute;
     top: 0;
     left: 330px;
     height: 25px;
     width: 25px;
-    background-color: white;/* rgb(114, 114, 114);*/
+    background-color: white;
+    /* rgb(114, 114, 114);*/
     border: solid turquoise 2px;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .containerz:hover input ~ .checkmark {
+}
+.containerz:hover input~.checkmark {
     background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .containerz input:checked ~ .checkmark {
+}
+.containerz input:checked~.checkmark {
     background-color: #2196F3;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+}
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .containerz input:checked ~ .checkmark:after {
+}
+.containerz input:checked~.checkmark:after {
     display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .containerz .checkmark:after {
+}
+.containerz .checkmark:after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -128,109 +154,24 @@ html
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
-  
+}
 
 
-
-
-
-  /* Important CSS */
-  .padding-1 {
-    padding-top: 20px;
-  }
-
-  .margin-1 {
-    margin-top: 50px;
-  }
-
-  .margin-2 {
-    margin: 10px;
-  }
-  .scrollable-1 {
-  overflow-y: scroll;
-  height: 500px;
-  }
-
-  .font-size-1 {
-  	font-size: 18px;
-  }
-
-  .font-size-2 {
-    font-size: 100px;
-    color: #3d3d3d;
-  }
-  .font-size-3 {
-    font-size: 70px;
-    color: grey;
-  }
-  .font-size-4 {
-    font-size: 70px;
-    /* color: grey; */
-  }
-  .border-left-1 {
-  	border-left: 1px solid lightgrey;
-  }
-
-  li
-  {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-  }
-
-
+/* Scrollbar */
 ::-webkit-scrollbar {
     /* padding-left: 100px; */
-    width: 5px;  
-    background: transparent;  
+    width: 5px;
+    background: transparent;
 }
 ::-webkit-scrollbar-thumb {
     background: turquoise;
 }
-
-
-.bootDivs
-{
-  padding: 100px;
-  text-align: center;
-  align-content: center;
-  height: 110vh;
-
+.super-p {
+    font-weight: bold;
+    font-size: 20px;
 }
-
-#passDiv input
-{
-  width: 150px;
-  /* margin-top: 30vh; */
-}
-
-#passImg
-{
-  margin-bottom: 30px;
-  margin-top: 5vh;
-}
-
-.super-p
-{
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.width-idek
-{
-  width: 100px;
-}
-
-#p-sidenote
-{
-  position: absolute;
-  right: 20px;
-  top: 30px;
-}
-#p-address
-{
-  margin-bottom: 10px;
+.width-idek {
+    width: 100px;
 }
 
 

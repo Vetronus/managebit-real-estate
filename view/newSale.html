@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ManageBit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../import/bulma.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../import/fa.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../print.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../style.css" />
+    <script src="../script/zil.js"></script>
+    <script src="../script/main.js"></script>
+    <script src="../script/createSale.js"></script>
+</head>
+
+<body>
+
+    <div class="columns" id="page">
+
+        <!-- Side Menu -->
+        <div class="column is-narrow" id="menu">
+            <img src="../import/archive.png" width="64px" height="64px">
+            <h1 id="menu-header">ManageBit<br>v1.4</h1>
+            <a data-div-id="dashboard-div" class="button is-medium menu-btn" id="dashboard-menu-btn" href="./siteExplorer.html">Dashboard</a> <br>
+            <a data-div-id="create-sale-div" class="button is-medium menu-btn menu-active" id="create-sale-menu-btn">Create Sale</a> <br>
+            <a data-div-id="khasra-div" class="button is-medium menu-btn" id="khasra-menu-btn">Khasra Data</a> <br>
+            <a data-div-id="search-data-div" class="button is-medium menu-btn" id="search-data-menu-btn">Search Data</a> <br>
+            <a data-div-id="about-managebit-div" class="button is-medium menu-btn" id="about-managebit-menu-btn"> ManageBit</a> <br>
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="column pad" id="content">
+              
+            <div class="field">
+                <label class="label">Customer Name</label>
+                <div class="control">
+                    <input class="input is-primary" id="name-input" type="text" placeholder="Name of the customer.">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Mobile Number</label>
+                <div class="control">
+                    <input class="input is-primary" id="mobile-input" type="text" placeholder="Mobile number of the customer.">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Address</label>
+                <div class="control">
+                    <input class="input is-primary" id="address-input" type="text" placeholder="Address of the customer.">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Site Name, Block and Sector</label>
+                <div class="select">
+                    <select id="site-select">
+                        <option value="">Select Site</option>
+                    </select>
+                </div>
+                <div class="select">
+                    <select id="block-select">
+                        <option value="">Blocks or Sectors</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Plot Number</label>
+                <div class="control">
+                    <input class="input is-primary" id="plotx-input" type="number" placeholder="Plot No." style="width: 100px">
+                    /
+                    <input class="input is-primary" id="ploty-input" type="number" placeholder="" style="width: 100px">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Plot Size</label>
+                <div class="control">
+                    <input class="input is-primary" id="size-input" type="text" placeholder="Size of the plot.">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Payment Detail</label>
+                <div class="control">
+                    <textarea class="textarea is-primary" id="payment-input" type="text" placeholder="Payment details, such as total cost, payment made, etc."></textarea>
+                </div>
+            </div>
+
+            <label class="containerz">Development Charges Paid
+                <input type="checkbox" id="dev-charges-input">
+                <span class="checkmark"></span>
+            </label>    
+            <label class='containerz'>Plot Registry
+                <input type='checkbox' id='plot-registry-input'>
+                <span class='checkmark'></span>
+            </label>
+            <label class="containerz">Plot Kabza
+                <input type="checkbox" id="plot-kabza-input">
+                <span class="checkmark"></span>
+            </label>
+
+            <div class="control" id="sale-control-one" style="margin-top: 40px;">
+                <button class="button is-primary" id="create-sale-btn">Create Sale</button>
+                <button class="button is-danger" id="clear-sale-btn" style="margin-left: 10px;">Clear Fields</button>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <div id="_status" >
+        <span id="_status-message">Please wait, saving data.</span> <button class="button is-loading is-success hideit" id="_status-loading"></button>
+    </div>
+
+</body>
+</html>
+
+<style>
+
+
+</style>
+
+

@@ -22,16 +22,8 @@ app.on('ready', function()
     // load html page into the window
     mainWindow.loadURL(url.format
     ({
-        pathname: path.join(__dirname, '/spa.html'),
+        pathname: path.join(__dirname, '/view/boot.html'),
         protocol: 'file:',
         slashes: true
     }));
-
-    // storage.load(function(temp){console.log(temp);});
-
-    // filePath = (electron.app || electron.remote.app).getPath('userData') + '/dataxyz123.json';
-    // fs.readFile(filePath, (err, data) => {
-    //     if (err);// throw err;
-    //     console.log(err.code);
-    // });
 });

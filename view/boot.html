@@ -9,33 +9,50 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../import/fa.css" />
     <link rel="stylesheet" type="text/css" media="print" href="../print.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../style.css" />
-    <!-- <script src="./script/main.js"></script>
-    <script src="./script/manageSite.js"></script>
-    <script src="./script/manageSale.js"></script>
-    <script src="./script/siteExplorer.js"></script>
-    <script src="./script/search.js"></script>
-    <script src="./script/kManager.js"></script> -->
+    <script src="../script/zil.js"></script>
+    <script src="../script/main.js"></script>
+    <script src="../script/boot.js"></script>
 </head>
 
 <body>
 
-    <!-- <div class="bootDivs" id="loadingDataDiv">
-        <img src="./import/spin.png" class="fa fa-spin" width="100px" height="100px" alt="Loading...">
-        <h1 class="font-size-3">Syncing Data...</h1>
-    </div> -->
-    <!-- Pass Protection -->
-    <div class="bootDivs" id="passDiv">
-        <div id="passImg">
+    <div id="passDiv">
+        <div id="passDiv-img">
             <img src="../import/archive.png" width="200px" height="200px">
             <p>ManageBit v2.1.0 <br> AN <a href="https://aroxbit.com">AROXBIT</a> CRAFT</p>
         </div>
         <input type="password" class="input is-info" id="pass-input" placeholder="Password">
-        <input type="text" class="hideit input is-info" id="pass-input" placeholder="Password" value="Loading Data..." disabled>
-        <button class="button is-primary" id="pass-btn">Login</button>
-        
+        <input type="text" class="hideit input is-info" value="Loading Data..." disabled>
+        <button class="button is-primary" id="login-btn">Login</button>
+    </div>
+
+    <div id="_status" >
+        <span id="_status-message">Please wait, saving data.</span> <button class="button is-loading is-success hideit" id="_status-loading"></button>
     </div>
 
 </body>
 </html>
+
+<style>
+
+#passDiv 
+{
+    padding: 100px;
+    text-align: center;
+    align-content: center;
+    height: 110vh;
+}
+
+#passDiv input 
+{
+    width: 150px;
+}
+
+#passDiv-img 
+{
+    margin-bottom: 30px;
+    margin-top: 5vh;
+}
+</style>
 
 

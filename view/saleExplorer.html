@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ManageBit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../import/bulma.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../import/fa.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../print.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../style.css" />
+    <script src="../script/zil.js"></script>
+    <script src="../script/main.js"></script>
+    <script src="../script/saleEx.js"></script>
+
+</head>
+
+<body>
+
+    <div class="columns" id="page">
+
+        <!-- Side Menu -->
+        <div class="column is-narrow" id="menu">
+            <img src="../import/archive.png" width="64px" height="64px">
+            <h1 id="menu-header">ManageBit<br>v1.4</h1>
+            <a href="./blockExplorer.html" data-div-id="dashboard-div" class="button is-medium menu-btn" id="dashboard-menu-btn"> <- Back</a> <br>
+            <a href="./newSale.html" data-div-id="create-sale-div" class="button is-medium menu-btn" id="create-sale-menu-btn">Create Sale</a> <br>
+            <a data-div-id="khasra-div" class="button is-medium menu-btn" id="khasra-menu-btn">Khasra Data</a> <br>
+            <a data-div-id="search-data-div" class="button is-medium menu-btn" id="search-data-menu-btn">Search Data</a> <br>
+            <a data-div-id="about-managebit-div" class="button is-medium menu-btn" id="about-managebit-menu-btn"> ManageBit</a> <br>
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="column pad" id="content">
+            <div class="columns is-multiline .is-centered has-text-centered is-paddingless" id="sale-div">
+
+                <div class='box saleBox column is-narrow'>
+                    <p class='has-text-primary is-size-3'>Sector 1</p>
+                    <div class='boxInfo'>
+                        <p>My Long Ass Site Name</p>
+                        <p>Total Plots: 40</p>
+                        <p>Available Plots: 38</p>
+                    </div>
+                    <div class='boxBtns'>
+                        <button class='button is-outlined is-primary'>Select</button>
+                        <button class='button is-info is-outlined'>Edit</button>
+                        <button class='button is-danger is-outlined is-marginless'>Delete</button>
+                    </div>
+                </div>
+                
+                <div class='box saleBox column is-narrow'>
+                    <p class='has-text-primary is-size-3'>Plot 13/A</p>
+                    <div class='boxInfo'>
+                        <p>My Long Ass Site Name</p>
+                        <p>Name: Ram Kumar Sinha</p>
+                        <p>Block | Sector: A</p>
+                    </div>
+                    <div class='boxBtns'>
+                        <button class='button is-outlined is-primary'>Select</button>
+                        <button class='button is-info is-outlined'>Edit</button>
+                        <button class='button is-danger is-outlined is-marginless'>Delete</button>
+                    </div>
+                </div>
+                
+                <div class='box saleBox column is-narrow'>
+                    <p class='has-text-info is-size-3'>New Block/Sec</p>
+                    <div style="margin-top: 12px;">
+                        <div class="select">
+                            <select class=" is-primary" style="width: 200px;">
+                                <option value="A">This is a Block</option>
+                                <option value="B">This is a Sector</option>
+                            </select>
+                        </div>
+                        <div class="field has-addons" style="width: 237px;padding-left: 37px; margin-top: 12px;">
+                            <div class="control">
+                                <input class="input is-info" type="text" placeholder="Block/Sec">
+                            </div>
+                            <div class="control">
+                                    <input class="input is-info" type="text" placeholder="Total Plots">
+                            </div>
+                        </div>                     
+                        <button class='button is-info is-rounded' style="width: 200px;">Create New Block/Sec</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="_status" >
+        <span id="_status-message">Please wait, saving data.</span> <button class="button is-loading is-success hideit" id="_status-loading"></button>
+    </div>
+
+</body>
+</html>
+
+<style>
+.saleBox
+{
+    width: 300px;
+    margin: 10px 10px 0px 0px !important;
+    /* padding: 12px 24px 12px 24px; */
+}
+
+.boxBtns
+{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.boxBtns button
+{
+    margin-right: 10px;
+}
+.boxInfo
+{
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 50px;
+}
+</style>
+
+

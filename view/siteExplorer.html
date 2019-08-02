@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ManageBit</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../import/bulma.css' />
+    <link rel='stylesheet' type='text/css' media='screen' href='../import/fa.css' />
+    <link rel='stylesheet' type='text/css' media='print' href='../print.css' />
+    <link rel='stylesheet' type='text/css' media='screen' href='../style.css' />
+    <script src='../script/zil.js'></script>
+    <script src='../script/main.js'></script>
+    <script src='../script/siteEx.js'></script>
+</head>
+
+<body>
+
+    <div class='columns' id='page'>
+
+        <!-- Side Menu -->
+        <div class='column is-narrow' id='menu'>
+            <img src='../import/archive.png' width='64px' height='64px'>
+            <h1 id='menu-header'>ManageBit<br>v1.4</h1>
+            <a data-div-id='dashboard-div' class='button is-medium menu-btn menu-active' id='dashboard-menu-btn'>Dashboard</a> <br>
+            <a data-div-id='create-sale-div' class='button is-medium menu-btn' id='create-sale-menu-btn' href='./newSale.html'>Create Sale</a> <br>
+            <a data-div-id='khasra-div' class='button is-medium menu-btn' id='khasra-menu-btn'>Khasra Data</a> <br>
+            <a data-div-id='search-data-div' class='button is-medium menu-btn' id='search-data-menu-btn'>Search Data</a> <br>
+            <a data-div-id='about-managebit-div' class='button is-medium menu-btn' id='about-managebit-menu-btn'> ManageBit</a> <br>
+        </div>
+
+
+        <!-- Main Content -->
+        <div class='column pad' id='content'>
+
+            <div class=' columns is-multiline .is-centered has-text-centered is-paddingless' id='site-explorer-div'>
+
+                <div class='box siteBox column is-narrow'>
+                    <p class='has-text-primary is-size-3'>Jupiters Farm</p>
+                    <div class='boxInfo'>
+                        <p>Total Blocks: 4</p>
+                        <p>Total Plots: 40</p>
+                        <p>Available Plots: 38</p>
+                    </div>
+                    <div class='boxBtns'>
+                        <button class='button is-outlined is-primary'>Select</button>
+                        <button class='button is-info is-outlined'>Edit</button>
+                        <button class='button is-danger is-outlined is-marginless'>Delete</button>
+                    </div>
+                </div>
+                
+                <div class='box siteBox column is-narrow'>
+                    <p class='has-text-info is-size-3'>Create Site</p>
+                    <div style='margin-top: 12px'>
+                        <input id='new-site-name-input' type='text' class='input is-info' placeholder='Site's Name' style='width: 200px; margin-bottom: 10px;'>                        
+                        <input id='new-site-village-input' type='text' class='input is-info' placeholder='Village Name' style='width: 200px; margin-bottom: 10px;'>                        
+                        <button id='create-site-btn' class='button is-info is-rounded' style='width: 200px;'>Create New Site</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="site-update-div" class="hideit">
+                
+                <div class="field">
+                    <label class="label">Site Name</label>
+                    <div class="control">
+                        <input class="input is-primary" id="update-name" type="text" placeholder="Name of the site.">
+                    </div>
+                </div>
+                
+                <div class="field">
+                    <label class="label">Village Name</label>
+                    <div class="control">
+                        <input class="input is-primary" id="update-village" type="text" placeholder="Name of the village.">
+                    </div>
+                </div>
+                
+                <div class="field">
+                    <label class="label">Total Land Area</label>
+                    <div class="control">
+                        <input class="input is-primary" id="update-area" type="text" placeholder="Total land area of the site. (Example: 3000 Hectares),">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Usable Land Area</label>
+                    <div class="control">
+                        <input class="input is-primary" id="update-usableArea" type="text" placeholder="Land area which can be sold, exempting land to be used for roads, etc.">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Landuse Status</label>
+                    <div class="control">
+                        <input class="input is-primary" id="update-landuseStatus" type="text" placeholder="Land was used for (Example: Farming).">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Registry Detail</label>
+                    <div class="control">
+                        <textarea class="textarea is-primary" id="update-registry" type="text" placeholder="Registry details, such as khasra number, etc."></textarea>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Payment Detail</label>
+                    <div class="control">
+                        <textarea class="textarea is-primary" id="update-payment" type="text" placeholder="Payment details, such as total cost, payment made, etc."></textarea>
+                    </div>
+                </div>
+                
+
+                <div class="control" style="margin-top: 40px;">
+                    <button class="button is-primary" id="save-update-btn">Save Data</button>
+                    <button class="button is-danger" id="cancel-update-btn" style="margin-left: 10px;">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <p style="margin-bottom: 20px">Are you sure you want to delete?</p>
+                <button class="button is-danger">Delete</button>
+                <button class="button is-primary is-outlined">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id='_status' >
+        <span id='_status-message'>Please wait, saving data.</span> <button class='button is-loading is-success hideit' id='_status-loading'></button>
+    </div>
+
+</body>
+</html>
+
+<style>
+.siteBox
+{
+    width: 300px;
+    margin: 10px 10px 0px 0px !important;
+    /* padding: 12px 24px 12px 24px; */
+}
+
+.boxBtns
+{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.boxBtns button
+{
+    margin-right: 10px;
+}
+.boxInfo
+{
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 50px;
+}
+</style>
+
+
