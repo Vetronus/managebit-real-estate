@@ -14,7 +14,7 @@
   "author": "Vetronus Stardust",
   "license": "MIT",
   "dependencies": {
-    "electron": "^2.0.18"
+    "electron": "^15.5.5"
   },
   "devDependencies": {
     "electron-packager": "^12.1.0",
